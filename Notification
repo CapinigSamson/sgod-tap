@@ -1,0 +1,36 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "recipient_email": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "new_request",
+        "status_update",
+        "new_message",
+        "general"
+      ]
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID of the related request or conversation"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Feedback",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "Linked TA Request ID"
+    },
+    "request_number": {
+      "type": "string"
+    },
+    "requester_email": {
+      "type": "string"
+    },
+    "requester_name": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "description": "1-5 satisfaction rating"
+    },
+    "was_resolved": {
+      "type": "boolean",
+      "description": "Whether the issue was fully resolved"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Additional feedback comments"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "request_id",
+    "rating"
+  ]
+}

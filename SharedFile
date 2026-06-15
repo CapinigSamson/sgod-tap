@@ -1,0 +1,34 @@
+{
+  "name": "SharedFile",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "Linked conversation ID"
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "file_size": {
+      "type": "number",
+      "description": "Size in bytes"
+    },
+    "uploaded_by_email": {
+      "type": "string"
+    },
+    "uploaded_by_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "file_name",
+    "file_url"
+  ]
+}

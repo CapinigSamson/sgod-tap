@@ -1,0 +1,31 @@
+{
+  "name": "CategoryAssignment",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "description": "The TA request category this rule applies to"
+    },
+    "assigned_to_email": {
+      "type": "string",
+      "description": "Email of the SDO personnel responsible for this category"
+    },
+    "assigned_to_name": {
+      "type": "string",
+      "description": "Full name of the SDO personnel"
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Comma-separated keywords that trigger this assignment (optional override)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "category",
+    "assigned_to_email",
+    "assigned_to_name"
+  ]
+}

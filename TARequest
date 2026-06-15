@@ -1,0 +1,124 @@
+{
+  "name": "TARequest",
+  "type": "object",
+  "properties": {
+    "request_number": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "SBM Concerns",
+        "Private School - Permit Renewal",
+        "Private School - TOSF",
+        "Private School - Special Order",
+        "Youth Formation Division (YFD)",
+        "Planning and Research",
+        "Social Mobilization and Networking",
+        "Human Resource Development",
+        "Disaster Risk Reduction and Management (DRRM)",
+        "Health and Nutrition Unit (HNU)",
+        "School Facilities and Constructions",
+        "Technical Assistance (General)"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
+    },
+    "concerns": {
+      "type": "string"
+    },
+    "implemented_actions": {
+      "type": "string"
+    },
+    "status_of_issue": {
+      "type": "string",
+      "enum": [
+        "Unresolved",
+        "Partially Resolved",
+        "Ongoing",
+        "Resolved"
+      ]
+    },
+    "ta_needed": {
+      "type": "string"
+    },
+    "preferred_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "request_status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Acknowledged",
+        "Scheduled",
+        "In Progress",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Pending"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Urgent"
+      ],
+      "default": "Medium"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "conversation_id": {
+      "type": "string"
+    },
+    "assigned_to_email": {
+      "type": "string"
+    },
+    "assigned_to_name": {
+      "type": "string"
+    },
+    "assignment_status": {
+      "type": "string",
+      "enum": [
+        "Unassigned",
+        "Pending Acceptance",
+        "Accepted",
+        "Reassigned"
+      ],
+      "default": "Unassigned"
+    },
+    "assigned_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "accepted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reassign_reason": {
+      "type": "string"
+    },
+    "is_archived": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, hidden from main dashboard but accessible in history"
+    }
+  },
+  "required": [
+    "name",
+    "position",
+    "concerns",
+    "ta_needed",
+    "category"
+  ]
+}

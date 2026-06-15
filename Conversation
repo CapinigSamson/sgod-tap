@@ -1,0 +1,55 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "Linked TA Request ID"
+    },
+    "request_number": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Email addresses of participants"
+    },
+    "contact_number": {
+      "type": "string",
+      "description": "Contact number of the requester"
+    },
+    "last_message": {
+      "type": "string"
+    },
+    "last_message_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "unread_count": {
+      "type": "number",
+      "default": 0
+    },
+    "category": {
+      "type": "string"
+    },
+    "is_group": {
+      "type": "boolean",
+      "default": false,
+      "description": "True if this is a group chat"
+    },
+    "group_name": {
+      "type": "string",
+      "description": "Display name for group chats"
+    },
+    "created_by_email": {
+      "type": "string",
+      "description": "Email of who created this group"
+    }
+  },
+  "required": []
+}

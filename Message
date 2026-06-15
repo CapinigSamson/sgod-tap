@@ -1,0 +1,77 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "Linked conversation ID"
+    },
+    "sender_email": {
+      "type": "string"
+    },
+    "sender_name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "sender_role": {
+      "type": "string",
+      "enum": [
+        "school",
+        "sdo"
+      ],
+      "description": "Whether sender is from school or SDO"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "content"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "data.sender_email": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "approver"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "assignee"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.sender_email": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
