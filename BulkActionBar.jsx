@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { base44 } from "@/api/base44Client";
 import { PERSONNEL } from "@/components/assignment/personnelList";
 import { Button } from "@/components/ui/button";
 import { Loader2, X, ChevronDown } from "lucide-react";
