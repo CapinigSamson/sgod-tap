@@ -8,6 +8,7 @@ import {
 import { ArrowLeft, TrendingUp, Clock, CheckCircle, AlertCircle, FileText, Users, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { differenceInHours, format, subDays, parseISO, startOfWeek, startOfMonth, subMonths } from "date-fns";
+import.meta.env.VITE_SUPABASE_URL
 
 const CATEGORY_COLORS = {
   "SBM Concerns": "#6366f1",
