@@ -1,21 +1,13 @@
-import.meta.env.VITE_SUPABASE_URL
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-
 // https://vite.dev/config/
 export default defineConfig({
-  logLevel: 'error', // Suppress warnings, only show errors
+  logLevel: 'error', // show only errors
   plugins: [
-VITE_SUPABASE_URL({
-      // Support for legacy code that imports the base44 SDK with @/integrations, @/entities, etc.
-      // can be removed if the code has been updated to use the new SDK imports from @base44/sdk
-      legacySDKImports: process.meta.env.VITE_SUPABASE_URL === 'true',
-      hmrNotifier: true,
-      navigationNotifier: true,
-      analyticsTracker: true,
-      visualEditAgent: true
-    }),
-    react(),
-  ]
+    react()
+  ],
+  define: {
+    __SUPABASE_URL__: JSON.stringify(import.meta.env.VITE_SUPABASE_URL)
+  }
 });
